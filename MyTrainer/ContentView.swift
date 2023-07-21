@@ -7,15 +7,49 @@
 
 import SwiftUI
 
+
+
 struct ContentView: View {
+    @State private var username: String = ""
+    @State private var password: String = ""
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        
+        VStack{
+            HStack{
+                Text("MyTrainer")
+                    .font(.title)
+                    .bold()
+                    .foregroundColor(.green)
+            }
+            Spacer()
+            
+            Button("Login with Google") {
+                
+            }
+            .buttonStyle(.bordered)
+           
+            
+            
+            
+            
+            
+            
+            
+            TextField("Username", text:$username)
+                .padding(.leading)
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
+                .border(Color(UIColor.separator))
+                .cornerRadius(10)
+                
+            SecureField("Password", text: $password)
+                .padding(.leading)
+                .border(Color(UIColor.separator))
+            Spacer()
         }
-        .padding()
+  
+       
     }
 }
 
